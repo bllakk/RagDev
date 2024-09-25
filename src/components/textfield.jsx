@@ -9,6 +9,16 @@ export default function Textfield() {
     const Porcentagem = (valorUnitario * 24) / 100;
     const ValorReajustado = valorUnitario + Porcentagem;
     const valorTotal = ValorReajustado * quantidade;
+    
+    const FormatarMoeda = (valor) => {
+        return new Intl.NumberFormat('pt-BR',{
+            style: 'currency',
+            currency: 'BRL',
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+        }).format(valor);
+    }
+    const ValorTotalFormatado = FormatarMoeda(valorTotal);
 
     return (
         <div className="flex gap-10 mb-5">
@@ -31,7 +41,7 @@ export default function Textfield() {
             />
             <InputDefaut 
                 text={"Valor total"} 
-                value={valorTotal} 
+                value={ValorTotalFormatado} 
                 readOnly 
             />
         </div>
