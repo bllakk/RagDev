@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Textfield from "./textfield";
-
 export default function InputDiv() {
     const [textfields, setTextfields] = useState([]);
     const [total, setTotal] = useState(0);

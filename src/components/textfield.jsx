@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import InputDefaut from "./inputs";
+import SelectDefault from "./select";
 
 export default function Textfield({ onTotalChange }) {
     const [nomeItem, setNomeItem] = useState("");
@@ -9,11 +10,11 @@ export default function Textfield({ onTotalChange }) {
 
     useEffect(() => {
         const Porcentagem = (valorUnitario * 24) / 100;
-        const ValorReajustado = Number(valorUnitario) + Porcentagem; // Certifique-se de que seja um número
-        const novoValorTotal = ValorReajustado * Number(quantidade); // Certifique-se de que seja um número
+        const ValorReajustado = Number(valorUnitario) + Porcentagem;
+        const novoValorTotal = ValorReajustado * Number(quantidade);
 
         setValorTotal(novoValorTotal);
-        onTotalChange(novoValorTotal); // Passa o novo valor total para o componente pai
+        onTotalChange(novoValorTotal);
     }, [valorUnitario, quantidade, onTotalChange]);
 
     const FormatarMoeda = (valor) => {
@@ -25,18 +26,20 @@ export default function Textfield({ onTotalChange }) {
         }).format(valor);
     }
 
+    // Função para receber o valor do select
+    const handleSelectChange = (valorSelecionado) => {
+        setValorUnitario(valorSelecionado); // Atualiza o valor unitário com o valor selecionado
+    }
+
     return (
-        <div className="grid grid-cols-4 gap-10 mb-5">
-            <InputDefaut 
-                text={"Nome do item"} 
-                value={nomeItem} 
-                onChange={(e) => setNomeItem(e.target.value)} 
-            />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-5">
+            <SelectDefault onSelectChange={handleSelectChange} />
             <InputDefaut 
                 text={"Valor unitário"} 
                 type="number" 
                 value={valorUnitario} 
                 onChange={(e) => setValorUnitario(e.target.value)} 
+                readOnly
             />
             <InputDefaut 
                 text={"Quantidade"} 
