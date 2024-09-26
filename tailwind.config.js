@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         impact: ["Impact", "sans-serif"],
+        tungsten: ["Tungsten", "sans-serif"]
       },
       boxShadow: {
         default:

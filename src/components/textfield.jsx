@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import InputDefaut from "./inputs";
+import InputDefault from "./inputs";
 import SelectDefault from "./select";
 
 export default function Textfield({ onTotalChange }) {
@@ -32,22 +32,22 @@ export default function Textfield({ onTotalChange }) {
     }
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-5 border-b border-solid pb-6 border-slate-500">
             <SelectDefault onSelectChange={handleSelectChange} />
-            <InputDefaut 
+            <InputDefault 
                 text={"Valor unitário"} 
                 type="number" 
                 value={valorUnitario} 
                 onChange={(e) => setValorUnitario(e.target.value)} 
                 readOnly
             />
-            <InputDefaut 
+            <InputDefault 
                 text={"Quantidade"} 
                 type="number" 
                 value={quantidade} 
                 onChange={(e) => setQuantidade(e.target.value)} 
             />
-            <InputDefaut 
+            <InputDefault 
                 text={"Valor total"} 
                 value={FormatarMoeda(valorTotal)} 
                 readOnly 

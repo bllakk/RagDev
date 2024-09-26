@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Textfield from "./textfield";
-export default function InputDiv() {
+import BtnCustom from "./btn-custom";
+export default function Calculadora() {
     const [textfields, setTextfields] = useState([]);
     const [total, setTotal] = useState(0);
     const maxFields = 7;
@@ -38,7 +39,7 @@ export default function InputDiv() {
     };
     
     return (
-        <div className="flex flex-col items-center mt-20">
+        <div className="flex flex-col items-center mt-5 ">
             {textfields.map((field, index) => (
                 <Textfield 
                     key={index} 
@@ -48,12 +49,7 @@ export default function InputDiv() {
             <h1 className="text-slate-300 tracking-wider font-impact">TOTAL: Z$ {formatarValorZeny(total)}</h1>
             <h2 className="text-slate-300 tracking-wider font-impact ">TOTAL: R$ {converterZenyEmReal(total.toFixed(2))}</h2>
 
-            <button
-                onClick={handleAddTextfield}
-                className="relative flex h-[50px] w-40 items-center justify-center overflow-hidden rounded border border-solid border-slate-200 text-slate-200 shadow-default mt-4 transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-slate-200 before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56 hover:text-slate-800"
-            >
-                <span class="relative z-10 font-impact tracking-wider">ADICIONAR ITEM</span>
-            </button>
+            <BtnCustom text={"ADICIONAR ITEM"} functionality={handleAddTextfield}/>
         </div>
     );
 }

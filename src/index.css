@@ -8,3 +8,9 @@
     font-style: normal;
     font-display: swap;
 }
+@font-face {
+    font-family: "Tungsten";
+    src: url("./fonts/tungsten/Tungsten.ttf") format("opentype");
+    font-style: normal;
+    font-display: swap;
+}
