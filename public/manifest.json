@@ -11,7 +11,7 @@
     "orientation": "any",
     "icons": [
       {
-        "src": "./poring.png",
+        "src": "./poring-512x512.png",
         "sizes": "512x512",
         "type": "image/png",
         "purpose": "maskable"
