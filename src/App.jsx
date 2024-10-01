@@ -3,7 +3,7 @@ import './App.css';
 
 import Nav from './components/nav';
 import Financas from './components/financas.jsx';
-import Calculadora from './components/inputdiv.jsx';
+import Calculadora from './components/calculadora.jsx';
 
 function App() {
   const [activeComponent, setActiveComponent] = useState('calculadora'); // Estado para controlar o componente ativo
