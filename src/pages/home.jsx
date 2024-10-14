@@ -20,7 +20,7 @@ export default function Home() {
       }
 
       try {
-        const response = await axios.get('http://localhost:3001/home', {
+        const response = await axios.get('https://server-oyjgy5e8o-gyan890opgmailcoms-projects.vercel.app/', {
           headers: {
             Authorization: `Bearer ${token}`
           },
