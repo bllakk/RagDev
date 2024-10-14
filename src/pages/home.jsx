@@ -5,12 +5,6 @@ import Nav from '../components/nav';
 import Calculadora from '../components/calculadora';
 import Financas from '../components/financas';
 
-
-
-
-
-
-
 export default function Home() {
 
 
