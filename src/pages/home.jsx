@@ -33,7 +33,7 @@ export default function Home() {
         }
       } catch (error) {
         localStorage.removeItem('authToken');
-        navigate('/');
+        navigate('/RagDev');
       }
     };
 
