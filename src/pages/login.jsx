@@ -13,6 +13,7 @@ const Login = () => {
 
   const navigate = useNavigate();
   axios.defaults.withCredentials = true;
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage('');
@@ -27,13 +28,14 @@ const Login = () => {
         username,
         password,
       }, { withCredentials: true });
-  
+      
+      // Verifica se a resposta contém o token
       const token = response.data.token;
   
       if (token) {
-        localStorage.setItem('authToken', token);
+        localStorage.setItem('authToken', token); // Armazenando o token no localStorage
         console.log('Token salvo no localStorage:', token);
-        navigate('/RagDev/home'); 
+        navigate('/RagDev/home'); // Redirecionando para a página home
       } else {
         setErrorMessage('Falha ao obter o token.');
       }
@@ -47,6 +49,7 @@ const Login = () => {
       }
     }
   };
+  
 
   return (
     <div className="bg-dark-blue-0 p-4 w-full h-full min-h-screen flex flex-col justify-center items-center text-center">
