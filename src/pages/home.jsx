@@ -15,7 +15,7 @@ export default function Home() {
       const token = localStorage.getItem('authToken'); // Pegando o token do localStorage
       if (!token) {
         // Se o token não existir, redireciona imediatamente para a página de login
-        navigate('/');
+        navigate('/RagDev');
         return;
       }
 
