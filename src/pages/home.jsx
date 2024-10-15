@@ -20,7 +20,7 @@ export default function Home() {
       }
 
       try {
-        const response = await axios.get('https://server-oyjgy5e8o-gyan890opgmailcoms-projects.vercel.app/', {
+        const response = await axios.get('https://server-rag.vercel.app/login', {
           headers: {
             Authorization: `Bearer ${token}`
           },
