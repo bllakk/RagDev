@@ -52,7 +52,7 @@ const Login = () => {
   
 
   return (
-    <div className="bg-dark-blue-0 p-4 w-full h-full min-h-screen flex flex-col justify-center items-center text-center">
+    <div className="bg-red-800 p-4 w-full h-full min-h-screen flex flex-col justify-center items-center text-center">
 
   <form onSubmit={handleSubmit} className='bg-dark-blue-1 flex flex-col gap-2 mt-4 px-12 py-8 rounded'>
     <h2 className='text-slate-200 mb-2 font-tungstenMedium text-3xl tracking-wider'>FAZER LOGIN</h2>
