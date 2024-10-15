@@ -33,7 +33,7 @@ const Login = () => {
       if (token) {
         localStorage.setItem('authToken', token);
         console.log('Token salvo no localStorage:', token);
-        navigate('/home');
+        navigate('/RagDev/home');
       } else {
         setErrorMessage('Falha ao obter o token.');
       }
