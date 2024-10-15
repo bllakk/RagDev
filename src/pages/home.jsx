@@ -10,6 +10,7 @@ export default function Home() {
 
   useEffect(() => {
     const verifyToken = async () => {
+      console.log("Cookie antes da requisição:", document.cookie);
       try {
         const response = await axios.get('https://server-rag.vercel.app/home', {
           withCredentials: true // Garantindo que os cookies sejam enviados com a requisição
