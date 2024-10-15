@@ -27,14 +27,10 @@ const Login = () => {
       const response = await axios.post('https://server-rag.vercel.app/login', {
         username,
         password,
-      }, { withCredentials: true });
+      }, { withCredentials: true }); // Isso garante que os cookies sejam enviados com a requisição
       
-      // Verifica se a resposta contém o token
-      const token = response.data.token;
-  
-      if (token) {
-        localStorage.setItem('authToken', token); // Armazenando o token no localStorage
-        console.log('Token salvo no localStorage:', token);
+      if (response.status === 200) {
+        console.log('Login bem-sucedido');
         navigate('/RagDev/home'); // Redirecionando para a página home
       } else {
         setErrorMessage('Falha ao obter o token.');
@@ -49,6 +45,7 @@ const Login = () => {
       }
     }
   };
+  
   
 
   return (
