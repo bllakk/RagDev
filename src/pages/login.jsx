@@ -23,7 +23,7 @@ const Login = () => {
     }
   
     try {
-      const response = await axios.post('https://server-oyjgy5e8o-gyan890opgmailcoms-projects.vercel.app/', {
+      const response = await axios.post('https://server-rag.vercel.app/login', {
         username,
         password,
       }, { withCredentials: true });
