@@ -159,7 +159,7 @@ export default function Financas() {
                             value={expense}
                             onChange={(e) => setExpense(e.target.value)}
                         />
-                        <BtnDefault text={'ADICIONAR VALOR'} functionality={expenses} />
+                        <BtnDefault text={'ADICIONAR VALOR'}/>
                     </form>
                 </div>
             </div>
