@@ -21,7 +21,7 @@ export default function Financas() {
     const fetchExpenses = async () => {
         setLoading(true);
         try {
-            const response = await axios.get('https://server-rag.vercel.app/bankEspenseResult', { withCredentials: true });
+            const response = await axios.get('https://server-rag.vercel.app/bankExpenseResult', { withCredentials: true });
             setTotalExpense(Number(response.data.total_expense));
         } catch (error) {
             setError("Erro ao carregar os dados do mês.");
@@ -91,7 +91,9 @@ export default function Financas() {
     useEffect(() => {
         fetchGanhosMes();
         fetchExpenses();
-    }, []);
+        console.log("Total de ganhos:", ganhoTotal);
+        console.log("Total de despesas:", totalExpense);
+    }, [ganhoTotal, totalExpense]);
 
     const monthlyExpenses = totalExpense; // Use o estado totalExpense já carregado
 
